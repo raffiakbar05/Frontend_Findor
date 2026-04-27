@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import {
   Star, MapPin, CheckCircle, Share2, Heart, ChevronRight,
   MessageCircle, FileText, Shield, RotateCcw, Grid3x3,
@@ -237,6 +237,17 @@ export default function VendorDetailPage() {
   const slug = params?.id as string;
   const vendor = VENDOR_DATA[slug] || getFallbackVendor(slug);
   const [saved, setSaved] = useState(false);
+  const router = useRouter();
+  const [user, setUser] = useState<unknown>(null);
+
+  useEffect(() => {
+    try { setUser(JSON.parse(localStorage.getItem('user') || 'null')); } catch { setUser(null); }
+  }, []);
+
+  const requireAuth = (callback: () => void) => {
+    if (!user) router.push('/login');
+    else callback();
+  };
 
   return (
     <main style={{ minHeight: '100vh', background: 'var(--white)' }}>
@@ -430,18 +441,20 @@ export default function VendorDetailPage() {
 
               {/* CTA buttons */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <a
-                  href={`https://wa.me/${vendor.whatsapp}?text=Halo,%20saya%20tertarik%20dengan%20layanan%20${encodeURIComponent(vendor.name)}%20di%20Findor`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: '#25D366', color: 'var(--white)', fontWeight: 700, fontSize: 15, padding: '14px', borderRadius: 'var(--radius-full)', textDecoration: 'none', transition: 'all 0.2s', fontFamily: 'DM Sans, sans-serif' }}
+                <button
+                  onClick={() => requireAuth(() => window.open(`https://wa.me/${vendor.whatsapp}?text=Halo,%20saya%20tertarik%20dengan%20layanan%20${encodeURIComponent(vendor.name)}%20di%20Findor`, '_blank'))}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: '#25D366', color: 'var(--white)', fontWeight: 700, fontSize: 15, padding: '14px', borderRadius: 'var(--radius-full)', textDecoration: 'none', transition: 'all 0.2s', fontFamily: 'DM Sans, sans-serif', border: 'none', cursor: 'pointer', width: '100%' }}
                   onMouseEnter={e => (e.currentTarget.style.background = '#1ebe5d')}
                   onMouseLeave={e => (e.currentTarget.style.background = '#25D366')}>
                   <MessageCircle size={18} /> Hubungi via WhatsApp
-                </a>
-                <Link href={`/booking/${slug}`} className="btn-primary" style={{ justifyContent: 'center', width: '100%', padding: '14px', textAlign: 'center' }}>
+                </button>
+                <button
+                  onClick={() => requireAuth(() => router.push(`/booking/${slug}`))}
+                  className="btn-primary"
+                  style={{ justifyContent: 'center', width: '100%', padding: '14px', textAlign: 'center', border: 'none', cursor: 'pointer' }}
+                >
                   Submit Transaksi
-                </Link>
+                </button>
                 <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)' }}>Bebas biaya konsultasi awal via Findor</p>
               </div>
 
