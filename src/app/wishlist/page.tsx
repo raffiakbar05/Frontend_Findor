@@ -214,16 +214,16 @@ export default function WishlistPage() {
 
                 {/* Content */}
                 <div style={{ padding:'16px 18px' }}>
-                  <div style={{ fontSize:15, fontWeight:800, color:'#111827', marginBottom:3 }}>{item.name}</div>
-                  <div style={{ fontSize:12, color:'#9ca3af', marginBottom:8 }}>{item.kategori}</div>
-                  <div style={{ display:'flex', alignItems:'center', gap:4, fontSize:12, color:'#6b7280', marginBottom:14 }}>
+                  <div style={{ fontSize:16, fontWeight:800, color:'#111827', marginBottom:3 }}>{item.name}</div>
+                  <div style={{ fontSize:13, color:'#9ca3af', marginBottom:8 }}>{item.kategori}</div>
+                  <div style={{ display:'flex', alignItems:'center', gap:4, fontSize:13, color:'#6b7280', marginBottom:14 }}>
                     <MapPin size={11}/> {item.lokasi}
                   </div>
 
                   <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', paddingTop:12, borderTop:'1px solid #f5f4f0' }}>
                     <div>
-                      <div style={{ fontSize:10, color:'#c4c2bb', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.05em' }}>Mulai dari</div>
-                      <div style={{ fontSize:16, fontWeight:900, color:'#0D3B2E', fontFamily:'Fraunces, serif' }}>{item.harga}</div>
+                      <div style={{ fontSize:11, color:'#c4c2bb', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.05em' }}>Mulai dari</div>
+                      <div style={{ fontSize:17, fontWeight:900, color:'#0D3B2E', fontFamily:'Fraunces, serif' }}>{item.harga}</div>
                     </div>
                     <Link href={`/vendor/${item.id}`} style={{
                       display:'inline-flex', alignItems:'center', gap:5,
@@ -239,7 +239,7 @@ export default function WishlistPage() {
                     </Link>
                   </div>
 
-                  <div style={{ fontSize:11, color:'#c4c2bb', marginTop:8 }}>
+                  <div style={{ fontSize:12, color:'#c4c2bb', marginTop:8 }}>
                     Disimpan {item.savedAt}
                   </div>
                 </div>

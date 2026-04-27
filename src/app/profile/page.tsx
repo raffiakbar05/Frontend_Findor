@@ -245,8 +245,8 @@ export default function ProfilePage() {
                   {s.icon}
                 </div>
                 <div>
-                  <div style={{ fontSize:26, fontWeight:900, color:'#111827', fontFamily:'Fraunces, serif', lineHeight:1 }}>{s.value}</div>
-                  <div style={{ fontSize:12, color:'#9ca3af', marginTop:4, fontWeight:500 }}>{s.label}</div>
+                  <div style={{ fontSize:28, fontWeight:900, color:'#111827', fontFamily:'Fraunces, serif', lineHeight:1 }}>{s.value}</div>
+                  <div style={{ fontSize:14, color:'#9ca3af', marginTop:4, fontWeight:500 }}>{s.label}</div>
                 </div>
               </div>
             </Link>
@@ -271,8 +271,8 @@ export default function ProfilePage() {
                 display:'flex', alignItems:'center', justifyContent:'space-between',
               }}>
                 <div>
-                  <h2 style={{ fontSize:15, fontWeight:800, color:'#111827', letterSpacing:'-0.2px' }}>Informasi Pribadi</h2>
-                  <p style={{ fontSize:12, color:'#9ca3af', marginTop:2 }}>Data diri yang ditampilkan di profil kamu</p>
+                  <h2 style={{ fontSize:17, fontWeight:800, color:'#111827', letterSpacing:'-0.2px' }}>Informasi Pribadi</h2>
+                  <p style={{ fontSize:13, color:'#9ca3af', marginTop:2 }}>Data diri yang ditampilkan di profil kamu</p>
                 </div>
               </div>
 
@@ -352,8 +352,8 @@ export default function ProfilePage() {
               overflow:'hidden',
             }}>
               <div style={{ padding:'22px 28px', borderBottom:'1px solid #f5f4f0' }}>
-                <h2 style={{ fontSize:15, fontWeight:800, color:'#111827', letterSpacing:'-0.2px' }}>Keamanan Akun</h2>
-                <p style={{ fontSize:12, color:'#9ca3af', marginTop:2 }}>Kelola password dan verifikasi akun</p>
+                <h2 style={{ fontSize:17, fontWeight:800, color:'#111827', letterSpacing:'-0.2px' }}>Keamanan Akun</h2>
+                <p style={{ fontSize:13, color:'#9ca3af', marginTop:2 }}>Kelola password dan verifikasi akun</p>
               </div>
               <div style={{ padding:'20px 28px', display:'flex', flexDirection:'column', gap:10 }}>
                 {[
@@ -374,8 +374,8 @@ export default function ProfilePage() {
                         {item.icon}
                       </div>
                       <div>
-                        <div style={{ fontSize:14, fontWeight:700, color:'#111827' }}>{item.label}</div>
-                        <div style={{ fontSize:12, color: item.verified ? '#15803D' : '#9ca3af', marginTop:2 }}>{item.sub}</div>
+                        <div style={{ fontSize:15, fontWeight:700, color:'#111827' }}>{item.label}</div>
+                        <div style={{ fontSize:13, color: item.verified ? '#15803D' : '#9ca3af', marginTop:2 }}>{item.sub}</div>
                       </div>
                     </div>
                     {item.action && (
@@ -414,7 +414,7 @@ export default function ProfilePage() {
               overflow:'hidden',
             }}>
               <div style={{ padding:'22px 24px', borderBottom:'1px solid #f5f4f0' }}>
-                <h2 style={{ fontSize:15, fontWeight:800, color:'#111827', letterSpacing:'-0.2px' }}>Detail Akun</h2>
+                <h2 style={{ fontSize:17, fontWeight:800, color:'#111827', letterSpacing:'-0.2px' }}>Detail Akun</h2>
               </div>
               <div style={{ padding:'20px 24px', display:'flex', flexDirection:'column', gap:0 }}>
                 {[
@@ -430,10 +430,10 @@ export default function ProfilePage() {
                   }}>
                     <div style={{ display:'flex', alignItems:'center', gap:10, color:'#9ca3af' }}>
                       {row.icon}
-                      <span style={{ fontSize:13, color:'#6b7280', fontWeight:500 }}>{row.label}</span>
+                      <span style={{ fontSize:14, color:'#6b7280', fontWeight:500 }}>{row.label}</span>
                     </div>
                     <span style={{
-                      fontSize:13, fontWeight:700,
+                      fontSize:14, fontWeight:700,
                       color: row.green ? '#15803D' : '#111827',
                     }}>{row.value}</span>
                   </div>
@@ -571,7 +571,7 @@ function Field({ label, value, editing, onChange, placeholder, icon }: {
 }
 
 const labelSt: React.CSSProperties = {
-  display:'block', fontSize:11, fontWeight:700,
-  color:'#9ca3af', letterSpacing:'0.07em',
+  display:'block', fontSize:13, fontWeight:700,
+  color:'#9ca3af', letterSpacing:'0.05em',
   textTransform:'uppercase', marginBottom:7,
 };

@@ -137,7 +137,7 @@ export default function VendorRegisterPage() {
 
       {/* Form */}
       <div style={{ maxWidth: 680, margin: '0 auto', padding: '40px 24px 80px' }}>
-        <div style={{ background: 'white', borderRadius: 20, padding: '36px 40px', border: '1px solid #e5e7eb', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}>
+        <div style={{ background: 'white', borderRadius: 20, padding: '40px 48px', border: '1px solid #e5e7eb', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}>
 
           {/* ── STEP 0: Informasi Bisnis ── */}
           {step === 0 && (
@@ -311,8 +311,8 @@ export default function VendorRegisterPage() {
           {/* ── STEP 3: Konfirmasi ── */}
           {step === 3 && (
             <div>
-              <h2 style={{ fontSize: 20, fontWeight: 800, color: '#111827', marginBottom: 4 }}>Konfirmasi Data</h2>
-              <p style={{ fontSize: 13, color: '#6b7280', marginBottom: 28 }}>Periksa kembali data Anda sebelum mengirim pendaftaran.</p>
+              <h2 style={{ fontSize: 22, fontWeight: 800, color: '#111827', marginBottom: 4 }}>Konfirmasi Data</h2>
+              <p style={{ fontSize: 14, color: '#6b7280', marginBottom: 28 }}>Periksa kembali data Anda sebelum mengirim pendaftaran.</p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <SummaryCard title="Informasi Bisnis">
@@ -368,7 +368,7 @@ export default function VendorRegisterPage() {
                   padding: '12px 28px', borderRadius: 999,
                   background: canNext() ? '#1a3c34' : '#e5e7eb',
                   color: canNext() ? 'white' : '#9ca3af',
-                  fontSize: 14, fontWeight: 700, border: 'none',
+                  fontSize: 15, fontWeight: 700, border: 'none',
                   cursor: canNext() ? 'pointer' : 'not-allowed', fontFamily: 'inherit',
                   transition: 'all 0.2s',
                 }}
@@ -382,7 +382,7 @@ export default function VendorRegisterPage() {
                   display: 'flex', alignItems: 'center', gap: 8,
                   padding: '12px 28px', borderRadius: 999,
                   background: 'linear-gradient(135deg, #f97316, #ea580c)',
-                  color: 'white', fontSize: 14, fontWeight: 700, border: 'none',
+                  color: 'white', fontSize: 15, fontWeight: 700, border: 'none',
                   cursor: 'pointer', fontFamily: 'inherit',
                   boxShadow: '0 4px 16px rgba(249,115,22,0.35)',
                 }}
@@ -399,11 +399,12 @@ export default function VendorRegisterPage() {
 
 // ── Reusable components ──
 
-const labelStyle: React.CSSProperties = { fontSize: 12, fontWeight: 700, color: '#374151', letterSpacing: '0.03em' };
+const labelStyle: React.CSSProperties = { fontSize: 13, fontWeight: 700, color: '#374151', letterSpacing: '0.02em' };
 const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '10px 14px', borderRadius: 10, fontSize: 13,
+  width: '100%', padding: '14px 16px', borderRadius: 12, fontSize: 15,
   border: '1.5px solid #e5e7eb', outline: 'none', fontFamily: 'inherit',
-  color: '#111827', background: 'white', boxSizing: 'border-box',
+  color: '#111827', background: '#fafafa', boxSizing: 'border-box',
+  transition: 'border-color 0.2s, box-shadow 0.2s',
 };
 
 function Field({ label, value, onChange, placeholder, type = 'text' }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string; type?: string }) {

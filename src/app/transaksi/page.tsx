@@ -126,10 +126,10 @@ export default function TransaksiPage() {
               border:'1px solid #eeede9', boxShadow:'0 1px 4px rgba(0,0,0,0.04)',
               display:'flex', alignItems:'center', gap:14,
             }}>
-              <div style={{ width:44, height:44, borderRadius:12, background:s.bg, color:s.color, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, fontSize:20, fontWeight:900, fontFamily:'Fraunces, serif' }}>
+              <div style={{ fontSize:22, fontWeight:900, fontFamily:'Fraunces, serif' }}>
                 {s.value}
               </div>
-              <div style={{ fontSize:12, color:'#9ca3af', fontWeight:500, lineHeight:1.4 }}>{s.label}</div>
+              <div style={{ fontSize:14, color:'#9ca3af', fontWeight:500, lineHeight:1.4 }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -209,7 +209,7 @@ export default function TransaksiPage() {
                     {/* Info */}
                     <div style={{ flex:1, minWidth:0 }}>
                       <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:4 }}>
-                        <span style={{ fontSize:15, fontWeight:700, color:'#111827' }}>{t.vendor}</span>
+                        <span style={{ fontSize:16, fontWeight:700, color:'#111827' }}>{t.vendor}</span>
                         <span style={{
                           display:'inline-flex', alignItems:'center', gap:4,
                           fontSize:11, fontWeight:700, padding:'3px 8px', borderRadius:999,
@@ -218,12 +218,12 @@ export default function TransaksiPage() {
                           {st.icon} {st.label}
                         </span>
                       </div>
-                      <div style={{ fontSize:12, color:'#9ca3af', marginBottom:6 }}>{t.kategori} · {t.id}</div>
+                      <div style={{ fontSize:13, color:'#9ca3af', marginBottom:6 }}>{t.kategori} · {t.id}</div>
                       <div style={{ display:'flex', alignItems:'center', gap:16, flexWrap:'wrap' }}>
-                        <span style={{ display:'flex', alignItems:'center', gap:4, fontSize:12, color:'#6b7280' }}>
+                        <span style={{ display:'flex', alignItems:'center', gap:4, fontSize:13, color:'#6b7280' }}>
                           <CalendarDays size={12}/> {t.tanggal}
                         </span>
-                        <span style={{ display:'flex', alignItems:'center', gap:4, fontSize:12, color:'#6b7280' }}>
+                        <span style={{ display:'flex', alignItems:'center', gap:4, fontSize:13, color:'#6b7280' }}>
                           <MapPin size={12}/> {t.lokasi}
                         </span>
                       </div>
@@ -231,7 +231,7 @@ export default function TransaksiPage() {
 
                     {/* Price + action */}
                     <div style={{ textAlign:'right', flexShrink:0 }}>
-                      <div style={{ fontSize:15, fontWeight:800, color:'#0D3B2E', fontFamily:'Fraunces, serif', marginBottom:8 }}>
+                      <div style={{ fontSize:16, fontWeight:800, color:'#0D3B2E', fontFamily:'Fraunces, serif', marginBottom:8 }}>
                         Rp {t.harga.toLocaleString('id-ID')}
                       </div>
                       <div style={{ display:'flex', gap:6, justifyContent:'flex-end' }}>

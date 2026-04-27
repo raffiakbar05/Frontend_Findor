@@ -82,49 +82,27 @@ export default function RegisterPage() {
   }
 
   return (
-    <main style={{ minHeight: '100vh', background: '#f5f5f0', display: 'flex', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+    <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#1a3c34', position: 'relative', overflow: 'hidden', padding: '40px 24px' }}>
 
-      {/* Left panel */}
-      <div style={{ flex: 1, background: '#1a3c34', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 64px', position: 'relative', overflow: 'hidden' }} className="login-left">
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.1 }} />
-        <div style={{ position: 'relative' }}>
-          <Link href="/" style={{ textDecoration: 'none' }}>
-            <img src="/logo_findor.jpg" alt="Findor" style={{ height: 56, width: 'auto', objectFit: 'contain' }} />
+      {/* Background */}
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.08 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(26,60,52,0.8) 0%, rgba(26,60,52,0.98) 100%)' }} />
+      <div style={{ position: 'absolute', top: -120, right: -120, width: 480, height: 480, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }} />
+      <div style={{ position: 'absolute', bottom: -80, left: -80, width: 320, height: 320, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }} />
+
+      {/* Card */}
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 500, background: 'white', borderRadius: 24, padding: '44px 48px', boxShadow: '0 24px 80px rgba(0,0,0,0.3)' }}>
+
+        {/* Logo */}
+        <div style={{ textAlign: 'center', marginBottom: 28 }}>
+          <Link href="/">
+            <img src="/logo_findor.jpg" alt="Findor" style={{ height: 48, width: 'auto', objectFit: 'contain', borderRadius: 10 }} />
           </Link>
-          <div style={{ marginTop: 60 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 3vw, 42px)', fontWeight: 900, color: 'white', lineHeight: 1.15, letterSpacing: '-1px', marginBottom: 20 }}>
-              Bergabung dengan<br />Komunitas Findor.
-            </h2>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, maxWidth: 340 }}>
-              Daftarkan diri Anda dan mulai pengalaman event premium bersama ratusan vendor terpercaya.
-            </p>
-          </div>
-          {/* Active role perks */}
-          <div style={{ marginTop: 48, background: 'rgba(255,255,255,0.07)', borderRadius: 16, padding: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', marginBottom: 14 }}>
-              KEUNTUNGAN SEBAGAI {activeRole.label.toUpperCase()}
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {activeRole.perks.map(p => (
-                <div key={p} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <CheckCircle size={14} color="#4ade80" />
-                  <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)' }}>{p}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
 
-      {/* Right panel */}
-      <div style={{ width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '48px', background: 'white', overflowY: 'auto' }} className="login-right">
-
-        <div style={{ marginBottom: 32 }}>
-          <h1 style={{ fontSize: 24, fontWeight: 900, color: '#111827', letterSpacing: '-0.5px', marginBottom: 6 }}>Buat Akun Baru</h1>
-          <p style={{ fontSize: 13, color: '#6b7280' }}>
-            Sudah punya akun?{' '}
-            <Link href="/login" style={{ color: '#1a3c34', fontWeight: 700, textDecoration: 'none' }}>Masuk di sini</Link>
-          </p>
+        <div style={{ marginBottom: 28 }}>
+          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#111827', letterSpacing: '-0.8px', marginBottom: 4, textAlign: 'center' }}>Buat Akun Baru</h1>
+          <p style={{ fontSize: 14, color: '#9ca3af', textAlign: 'center' }}>Bergabung dengan komunitas Findor</p>
         </div>
 
         {/* Step: pilih role */}
@@ -161,7 +139,7 @@ export default function RegisterPage() {
             </div>
             <button
               onClick={() => setStep('form')}
-              style={{ width: '100%', padding: '13px', borderRadius: 999, background: '#1a3c34', color: 'white', fontSize: 14, fontWeight: 700, border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, fontFamily: 'inherit' }}
+              style={{ width: '100%', padding: '15px', borderRadius: 999, background: '#1a3c34', color: 'white', fontSize: 15, fontWeight: 700, border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, fontFamily: 'inherit' }}
             >
               Lanjut sebagai {activeRole.label} <ArrowRight size={16} />
             </button>
@@ -219,10 +197,10 @@ export default function RegisterPage() {
               <button
                 type="submit" disabled={!canSubmit || loading}
                 style={{
-                  marginTop: 6, width: '100%', padding: '13px', borderRadius: 999,
+                  marginTop: 6, width: '100%', padding: '15px', borderRadius: 999,
                   background: canSubmit && !loading ? '#1a3c34' : '#e5e7eb',
                   color: canSubmit && !loading ? 'white' : '#9ca3af',
-                  fontSize: 14, fontWeight: 700, border: 'none',
+                  fontSize: 15, fontWeight: 700, border: 'none',
                   cursor: canSubmit && !loading ? 'pointer' : 'not-allowed',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                   fontFamily: 'inherit', transition: 'all 0.2s',
@@ -234,24 +212,23 @@ export default function RegisterPage() {
           </div>
         )}
 
-        <p style={{ fontSize: 11, color: '#9ca3af', textAlign: 'center', marginTop: 24, lineHeight: 1.7 }}>
+        <p style={{ fontSize: 14, color: '#6b7280', textAlign: 'center', marginTop: 20 }}>
+          Sudah punya akun?{' '}
+          <Link href="/login" style={{ color: '#1a3c34', fontWeight: 700, textDecoration: 'none' }}>Masuk di sini</Link>
+        </p>
+
+        <p style={{ fontSize: 11, color: '#9ca3af', textAlign: 'center', marginTop: 12, lineHeight: 1.7 }}>
           Dengan mendaftar, Anda menyetujui <Link href="/how-it-works" style={{ color: '#1a3c34', fontWeight: 600 }}>Syarat & Ketentuan</Link> dan <Link href="/how-it-works" style={{ color: '#1a3c34', fontWeight: 600 }}>Kebijakan Privasi</Link> Findor.
         </p>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .login-left { display: none !important; }
-          .login-right { width: 100% !important; padding: 40px 24px !important; }
-        }
-      `}</style>
     </main>
   );
 }
 
-const labelStyle: React.CSSProperties = { fontSize: 12, fontWeight: 700, color: '#374151', letterSpacing: '0.03em', display: 'block', marginBottom: 6 };
+const labelStyle: React.CSSProperties = { fontSize: 13, fontWeight: 700, color: '#374151', letterSpacing: '0.02em', display: 'block', marginBottom: 8 };
 const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '11px 14px', borderRadius: 10, fontSize: 13,
+  width: '100%', padding: '14px 16px', borderRadius: 12, fontSize: 15,
   border: '1.5px solid #e5e7eb', outline: 'none', fontFamily: 'inherit',
-  color: '#111827', background: 'white', boxSizing: 'border-box',
+  color: '#111827', background: '#fafafa', boxSizing: 'border-box',
+  transition: 'border-color 0.2s, box-shadow 0.2s',
 };

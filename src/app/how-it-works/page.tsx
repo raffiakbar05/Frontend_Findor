@@ -100,7 +100,7 @@ function RuleCard({ rule }: { rule: { type: string; title: string; desc: string 
       </div>
       <div>
         <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>{rule.title}</p>
-        <p style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.65 }}>{rule.desc}</p>
+        <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.65 }}>{rule.desc}</p>
       </div>
     </div>
   );
@@ -119,7 +119,7 @@ function SectionHeader({ icon, title, sub }: { icon: React.ReactNode; title: str
       </div>
       <div>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.3px', marginBottom: 2 }}>{title}</h2>
-        <p style={{ fontSize: 13, color: 'var(--text-secondary)' }}>{sub}</p>
+        <p style={{ fontSize: 14, color: 'var(--text-secondary)' }}>{sub}</p>
       </div>
     </div>
   );
@@ -222,11 +222,11 @@ export default function HowItWorksPage() {
                     {s.icon}
                   </div>
                   <div style={{
-                    fontSize: 10, fontWeight: 700, color: 'var(--amber)',
+                    fontSize: 11, fontWeight: 700, color: 'var(--amber)',
                     letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 6,
                   }}>{s.num}</div>
-                  <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--text-primary)', marginBottom: 8 }}>{s.title}</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.65 }}>{s.desc}</div>
+                  <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--text-primary)', marginBottom: 8 }}>{s.title}</div>
+                  <div style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.65 }}>{s.desc}</div>
                 </div>
               </div>
             ))}
@@ -281,8 +281,8 @@ export default function HowItWorksPage() {
                     padding: '16px 20px', flex: 1,
                     border: '1px solid var(--gray-100)',
                   }}>
-                    <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>{s.title}</p>
-                    <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6 }}>{s.desc}</p>
+                    <p style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>{s.title}</p>
+                    <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.6 }}>{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -302,15 +302,15 @@ export default function HowItWorksPage() {
               <AlertTriangle size={22} color="#ea580c" />
             </div>
             <div>
-              <h3 style={{ fontSize: 16, fontWeight: 700, color: '#9a3412', marginBottom: 8 }}>Sanksi Pelanggaran</h3>
-              <p style={{ fontSize: 13, color: '#7c2d12', lineHeight: 1.7, marginBottom: 12 }}>
+              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#9a3412', marginBottom: 8 }}>Sanksi Pelanggaran</h3>
+              <p style={{ fontSize: 14, color: '#7c2d12', lineHeight: 1.7, marginBottom: 12 }}>
                 Pelanggaran terhadap aturan di atas dapat mengakibatkan:
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                 {SANCTIONS.map((s, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <Ban size={12} color="#ea580c" />
-                    <span style={{ fontSize: 13, color: '#7c2d12' }}>{s}</span>
+                    <span style={{ fontSize: 14, color: '#7c2d12' }}>{s}</span>
                   </div>
                 ))}
               </div>
@@ -332,10 +332,10 @@ export default function HowItWorksPage() {
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg, rgba(13,59,46,0.95) 40%, rgba(13,59,46,0.5) 100%)' }} />
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: 'var(--white)', marginBottom: 6, letterSpacing: '-0.3px' }}>
+              <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 700, color: 'var(--white)', marginBottom: 6, letterSpacing: '-0.3px' }}>
                 Ada pertanyaan soal aturan ini?
               </h3>
-              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+              <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
                 Tim Findor siap membantu Anda memahami standar platform kami.
               </p>
             </div>

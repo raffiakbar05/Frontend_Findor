@@ -24,126 +24,30 @@ export default function LoginPage() {
   };
 
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f7f7f5' }}>
+    <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#0d3b2e', position: 'relative', overflow: 'hidden' }}>
 
-      {/* ── Left Panel ── */}
-      <div
-        className="login-left"
-        style={{
-          flex: 1,
-          position: 'relative',
-          overflow: 'hidden',
-          background: '#0d3b2e',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          padding: '48px 56px',
-        }}
-      >
-        {/* Background photo */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'url(https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.18,
-        }} />
+      {/* Background photo */}
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(13,59,46,0.7) 0%, rgba(13,59,46,0.97) 100%)' }} />
+      {/* Decorative circles */}
+      <div style={{ position: 'absolute', top: -100, right: -100, width: 400, height: 400, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }} />
+      <div style={{ position: 'absolute', bottom: -80, left: -80, width: 320, height: 320, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }} />
 
-        {/* Gradient overlay */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(160deg, rgba(13,59,46,0.6) 0%, rgba(13,59,46,0.95) 100%)',
-        }} />
-
-        {/* Decorative circles */}
-        <div style={{ position: 'absolute', top: -80, right: -80, width: 320, height: 320, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.06)' }} />
-        <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }} />
-        <div style={{ position: 'absolute', bottom: -60, left: -60, width: 280, height: 280, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)' }} />
-
+      {/* Card */}
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 480, margin: '40px 24px', background: 'white', borderRadius: 24, padding: '48px 52px', boxShadow: '0 24px 80px rgba(0,0,0,0.3)', animation: 'fadeUp 0.5s ease both' }}>
         {/* Logo */}
-        <div style={{ position: 'relative', zIndex: 2, animation: 'fadeUp 0.7s 0.1s both' }}>
+        <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <Link href="/">
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              background: 'white',
-              borderRadius: 14,
-              padding: '8px 14px',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-            }}>
-              <img src="/logo_findor.jpg" alt="Findor" style={{ height: 36, width: 'auto', objectFit: 'contain', display: 'block' }} />
-            </div>
+            <img src="/logo_findor.jpg" alt="Findor" style={{ height: 48, width: 'auto', objectFit: 'contain', borderRadius: 10 }} />
           </Link>
         </div>
 
-        {/* Headline & stats */}
-        <div style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ animation: 'fadeUp 0.7s 0.25s both' }}>
-            <h2 style={{
-              fontFamily: 'Fraunces, serif',
-              fontSize: 'clamp(38px, 3.8vw, 62px)',
-              fontWeight: 900,
-              color: 'white',
-              lineHeight: 1.1,
-              letterSpacing: '-1.5px',
-              marginBottom: 20,
-            }}>
-              Temukan Vendor<br />
-              <em style={{ fontStyle: 'italic', color: '#f5a623', fontWeight: 300 }}>Terbaik</em> untuk<br />
-              Event Anda.
-            </h2>
-            <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: 340 }}>
-              Platform kurasi vendor event premium terpercaya di Indonesia.
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div style={{ display: 'flex', gap: 36, marginTop: 52, animation: 'fadeUp 0.7s 0.4s both' }}>
-            {[
-              { val: '2.400+', label: 'Vendor' },
-              { val: '18rb+', label: 'Event Sukses' },
-              { val: '99%', label: 'Kepuasan' },
-            ].map(s => (
-              <div key={s.label}>
-                <div style={{ fontFamily: 'Fraunces, serif', fontSize: 30, fontWeight: 900, color: 'white', lineHeight: 1 }}>
-                  {s.val}
-                </div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginTop: 6, textTransform: 'uppercase', letterSpacing: '0.07em' }}>
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-
-        </div>
-      </div>
-
-      {/* ── Right Panel ── */}
-      <div
-        className="login-right"
-        style={{
-          width: 500,
-          background: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          padding: '56px 52px',
-          overflowY: 'auto',
-          animation: 'fadeIn 0.5s ease both',
-        }}
-      >
         {/* Header */}
-        <div style={{ marginBottom: 40, animation: 'fadeUp 0.6s 0.15s both' }}>
-          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#0f172a', letterSpacing: '-0.5px', marginBottom: 8, lineHeight: 1.2 }}>
+        <div style={{ marginBottom: 32, animation: 'fadeUp 0.6s 0.15s both' }}>
+          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#0f172a', letterSpacing: '-0.8px', marginBottom: 6, lineHeight: 1.2, textAlign: 'center' }}>
             Masuk ke Findor
           </h1>
-          <p style={{ fontSize: 14, color: '#94a3b8' }}>
-            Belum punya akun?{' '}
-            <Link href="/register" style={{ color: '#0d3b2e', fontWeight: 700, textDecoration: 'none' }}>
-              Daftar gratis
-            </Link>
-          </p>
+          <p style={{ fontSize: 14, color: '#94a3b8', textAlign: 'center' }}>Selamat datang kembali 👋</p>
         </div>
 
         {/* Form */}
@@ -164,7 +68,7 @@ export default function LoginPage() {
                 style={{
                   ...inputStyle,
                   borderColor: focused === 'nama' ? '#0d3b2e' : '#e2e8f0',
-                  boxShadow: focused === 'nama' ? '0 0 0 3px rgba(13,59,46,0.08)' : 'none',
+                  boxShadow: focused === 'nama' ? '0 0 0 4px rgba(13,59,46,0.08)' : 'none',
                 }}
               />
             </div>
@@ -185,7 +89,7 @@ export default function LoginPage() {
                 style={{
                   ...inputStyle,
                   borderColor: focused === 'email' ? '#0d3b2e' : '#e2e8f0',
-                  boxShadow: focused === 'email' ? '0 0 0 3px rgba(13,59,46,0.08)' : 'none',
+                  boxShadow: focused === 'email' ? '0 0 0 4px rgba(13,59,46,0.08)' : 'none',
                 }}
               />
             </div>
@@ -212,7 +116,7 @@ export default function LoginPage() {
                   ...inputStyle,
                   paddingRight: 44,
                   borderColor: focused === 'password' ? '#0d3b2e' : '#e2e8f0',
-                  boxShadow: focused === 'password' ? '0 0 0 3px rgba(13,59,46,0.08)' : 'none',
+                  boxShadow: focused === 'password' ? '0 0 0 4px rgba(13,59,46,0.08)' : 'none',
                 }}
               />
               <button
@@ -232,11 +136,11 @@ export default function LoginPage() {
             style={{
               marginTop: 4,
               width: '100%',
-              padding: '14px',
-              borderRadius: 12,
+              padding: '16px',
+              borderRadius: 14,
               background: loading ? '#e2e8f0' : '#0d3b2e',
               color: loading ? '#94a3b8' : 'white',
-              fontSize: 15,
+              fontSize: 16,
               fontWeight: 700,
               border: 'none',
               cursor: loading ? 'not-allowed' : 'pointer',
@@ -274,11 +178,11 @@ export default function LoginPage() {
         <button
           style={{
             width: '100%',
-            padding: '13px',
-            borderRadius: 12,
+            padding: '14px',
+            borderRadius: 14,
             border: '1.5px solid #e2e8f0',
             background: 'white',
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             color: '#374151',
             cursor: 'pointer',
@@ -303,7 +207,12 @@ export default function LoginPage() {
         </button>
 
         {/* Footer note */}
-        <p style={{ fontSize: 11, color: '#cbd5e1', textAlign: 'center', marginTop: 32, lineHeight: 1.7, animation: 'fadeUp 0.6s 0.5s both' }}>
+        <p style={{ fontSize: 14, color: '#6b7280', textAlign: 'center', marginTop: 20 }}>
+          Belum punya akun?{' '}
+          <Link href="/register" style={{ color: '#0d3b2e', fontWeight: 700, textDecoration: 'none' }}>Daftar gratis</Link>
+        </p>
+
+        <p style={{ fontSize: 12, color: '#cbd5e1', textAlign: 'center', marginTop: 16, lineHeight: 1.7 }}>
           Dengan masuk, Anda menyetujui{' '}
           <Link href="/how-it-works" style={{ color: '#64748b', fontWeight: 600, textDecoration: 'none' }}>Syarat & Ketentuan</Link>
           {' '}dan{' '}
@@ -313,15 +222,9 @@ export default function LoginPage() {
       </div>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
-
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(20px); }
           to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to   { opacity: 1; }
         }
         @keyframes spin {
           to { transform: rotate(360deg); }
@@ -334,30 +237,25 @@ export default function LoginPage() {
           display: inline-block;
           animation: spin 0.7s linear infinite;
         }
-        @media (max-width: 768px) {
-          .login-left { display: none !important; }
-          .login-right { width: 100% !important; padding: 40px 24px !important; }
-        }
       `}</style>
     </main>
   );
 }
 
 const labelStyle: React.CSSProperties = {
-  fontSize: 12,
+  fontSize: 13,
   fontWeight: 700,
   color: '#374151',
-  letterSpacing: '0.03em',
+  letterSpacing: '0.02em',
   display: 'block',
-  marginBottom: 7,
-  textTransform: 'uppercase',
+  marginBottom: 8,
 };
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
-  padding: '12px 14px',
-  borderRadius: 10,
-  fontSize: 14,
+  padding: '14px 16px',
+  borderRadius: 12,
+  fontSize: 15,
   border: '1.5px solid #e2e8f0',
   outline: 'none',
   fontFamily: 'inherit',
